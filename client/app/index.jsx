@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import StoryList from './storyList.jsx';
+import $ from 'jquery';
+import fetchStories from './ajaxHelpers.js'
 
 class App extends React.Component {
 
@@ -19,6 +21,21 @@ class App extends React.Component {
       </div>
     )
   }
-}
+};
 
-ReactDOM.render(<App stories={topTenList}/>, document.getElementById('app'));
+fetchStories(function(topTenList) {
+  ReactDOM.render(<App stories={topTenList}/>, document.getElementById('app'));
+});
+
+
+// $.ajax({
+//   url: '/stories',
+//   type: 'GET',
+//   success: function(topTenList) {
+//     ReactDOM.render(<App stories={topTenList}/>, document.getElementById('app'));
+//   },
+//   error: function(err) {
+//     console.error(err);
+//   }
+// });
+
