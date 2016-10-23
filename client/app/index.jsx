@@ -1,0 +1,1 @@
+console.log('Hello, it seems compiling went well! ');
