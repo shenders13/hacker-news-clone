@@ -28,14 +28,3 @@ fetchStories(function(topTenList) {
 });
 
 
-// $.ajax({
-//   url: '/stories',
-//   type: 'GET',
-//   success: function(topTenList) {
-//     ReactDOM.render(<App stories={topTenList}/>, document.getElementById('app'));
-//   },
-//   error: function(err) {
-//     console.error(err);
-//   }
-// });
-

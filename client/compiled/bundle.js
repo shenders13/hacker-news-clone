@@ -117,17 +117,6 @@
 	(0, _ajaxHelpers2.default)(function (topTenList) {
 	  _reactDom2.default.render(_react2.default.createElement(App, { stories: topTenList }), document.getElementById('app'));
 	});
-	
-	// $.ajax({
-	//   url: '/stories',
-	//   type: 'GET',
-	//   success: function(topTenList) {
-	//     ReactDOM.render(<App stories={topTenList}/>, document.getElementById('app'));
-	//   },
-	//   error: function(err) {
-	//     console.error(err);
-	//   }
-	// });
 
 /***/ },
 /* 1 */
