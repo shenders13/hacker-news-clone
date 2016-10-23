@@ -1,15 +1,21 @@
+var Story = require('../db/storyModel.js');
+var bodyParser = require('body-parser');
+
 exports.fetchStories = function(req,res) {
-  var topTenList = [
-    {
-      author: 'ocdtrekkie',
-      title: 'Switch – New Video Game System [video]',
-      score: 536
-    },
-    {
-      author: 'mhb',
-      title: 'Video Games Are Changing the Way Soccer Is Played',
-      score: 100
-    }
-  ];
-  res.send(topTenList);
+  Story.find({}, function(err, stories) {
+    res.send(stories);
+  })
 };
+
+exports.insertStory = function(req, res) {
+  console.log('req of POST request: ', req.body);
+  Story.create(req.body, function(err, data) {
+    if (err) {
+      res.send(err);
+    }
+    else {
+      res.sendStatus(200);
+    }
+  })
+};
+
