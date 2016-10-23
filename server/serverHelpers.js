@@ -108,7 +108,7 @@ exports.updateStories = function(req, res) {
 
   // PART 3 - INVOKE FUNCTION. HANDLER INSERTS 20 STORY OBJECTS INTO DB.
 
-  getStoriesData(1, function(storyInfo) {
+  getStoriesData(10, function(storyInfo) {
     var filtered = {};
     filtered.author = storyInfo.by;
     filtered.title = storyInfo.title;

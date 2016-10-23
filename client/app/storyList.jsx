@@ -7,7 +7,6 @@ var StoryList = function(props) {
       {props.storyList.map((story, i) =>
         <StoryPanel story={story} key={i}/>
       )}
-      <hr/>
     </div>
   );
 };

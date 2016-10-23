@@ -99,11 +99,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          ' Hacker News Stories '
-	        ),
+	        _react2.default.createElement('img', { className: 'bg-image', src: 'http://res.cloudinary.com/small-change/image/upload/v1477211672/hrbg_1_akcnyf.png' }),
 	        _react2.default.createElement(_storyList2.default, { storyList: this.state.storyList })
 	      );
 	    }
@@ -22027,8 +22023,7 @@
 	    null,
 	    props.storyList.map(function (story, i) {
 	      return _react2.default.createElement(_storyPanel2.default, { story: story, key: i });
-	    }),
-	    _react2.default.createElement('hr', null)
+	    })
 	  );
 	};
 	
@@ -22056,24 +22051,16 @@
 	var StoryPanel = function StoryPanel(props) {
 	  return _react2.default.createElement(
 	    'div',
-	    null,
-	    _react2.default.createElement('hr', null),
+	    { className: 'story-panel' },
 	    _react2.default.createElement(
 	      'p',
-	      null,
-	      ' ',
-	      _react2.default.createElement(
-	        'b',
-	        null,
-	        'Title:'
-	      ),
-	      ' ',
+	      { className: 'story-title' },
 	      props.story.title,
 	      ' '
 	    ),
 	    _react2.default.createElement(
 	      'p',
-	      null,
+	      { className: 'author-score' },
 	      ' ',
 	      _react2.default.createElement(
 	        'b',
@@ -22082,12 +22069,7 @@
 	      ),
 	      ' ',
 	      props.story.author,
-	      ' '
-	    ),
-	    _react2.default.createElement(
-	      'p',
-	      null,
-	      ' ',
+	      ',   ',
 	      _react2.default.createElement(
 	        'b',
 	        null,

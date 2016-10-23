@@ -16,7 +16,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <h1> Hacker News Stories </h1>
+        <img className='bg-image' src='http://res.cloudinary.com/small-change/image/upload/v1477211672/hrbg_1_akcnyf.png'/>
         <StoryList storyList={this.state.storyList}/>
       </div>
     )
