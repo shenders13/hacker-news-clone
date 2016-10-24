@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost/stories');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('mongoose db is open!');
+  console.log('mongoose db STORIES is open!');
 });
 
 //-----------------------------------------------
@@ -99,7 +99,6 @@ exports.updateStories = function(req, res) {
           if (err) {
             console.error(err);
           } else {
-            // push each storyInfo object to storyDataArray
             var storyInfo = JSON.parse(body);
             console.log('title: ', storyInfo.title);
             callback(storyInfo);
@@ -117,7 +116,6 @@ exports.updateStories = function(req, res) {
     filtered.author = storyInfo.by;
     filtered.title = storyInfo.title;
     filtered.url = storyInfo.url;
-    console.log('filtered: ', filtered);
     filtered.score = Number(storyInfo.score);
     Story.create(filtered, function(err, data) {
     })

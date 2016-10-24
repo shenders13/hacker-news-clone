@@ -1,10 +1,5 @@
 ToDo List
 
-0. add url to story schema and make title's link to the actual story
-
-1. change serverHelpers.js to storyHelpers.js
-
-2. create an authorHelpers.js file
 
 3. make a getAuthorData method in authorHelpers.js
 
@@ -35,5 +30,7 @@ authorHelper function
 12. put the hero image in App, change the router so that App is the parent route, and put {this.props.children} under the image tag in the App component
 
 13. we could then put the stories component as the index route
+
+14. add url shortner and show on story item
 
 
