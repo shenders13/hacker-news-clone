@@ -22055,7 +22055,11 @@
 	    _react2.default.createElement(
 	      'p',
 	      { className: 'story-title' },
-	      props.story.title,
+	      _react2.default.createElement(
+	        'a',
+	        { className: 'url-links', href: props.story.url },
+	        props.story.title
+	      ),
 	      ' '
 	    ),
 	    _react2.default.createElement(

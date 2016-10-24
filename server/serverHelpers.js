@@ -116,6 +116,8 @@ exports.updateStories = function(req, res) {
     var filtered = {};
     filtered.author = storyInfo.by;
     filtered.title = storyInfo.title;
+    filtered.url = storyInfo.url;
+    console.log('filtered: ', filtered);
     filtered.score = Number(storyInfo.score);
     Story.create(filtered, function(err, data) {
     })
