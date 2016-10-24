@@ -84,6 +84,10 @@ exports.updateStories = function(req, res) {
   // PART 2 - DEFINE FUNCTION TO RETRIVE FIRST 15 STORY OBJECTS
 
   var getStoriesData = function(limit, callback) {
+    // remove all previous stories
+    Story.remove({}, function() {
+      console.log('All story documents removed');
+    })
     // get storyId's in an array
     getJSONFromHackerNews(topStoriesURL, function(err, data) {
       var storyIdArray = data;
@@ -113,7 +117,6 @@ exports.updateStories = function(req, res) {
     filtered.author = storyInfo.by;
     filtered.title = storyInfo.title;
     filtered.score = Number(storyInfo.score);
-
     Story.create(filtered, function(err, data) {
     })
   });

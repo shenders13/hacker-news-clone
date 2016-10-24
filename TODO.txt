@@ -1,0 +1,31 @@
+ToDo List
+
+0. add url to story schema and make title's link to the actual story
+
+1. change serverHelpers.js to storyHelpers.js
+
+2. create an authorHelpers.js file
+
+3. make a getAuthorData method in authorHelpers.js
+
+4. authorHelpers.js should ping the Hacker News API and retrieve their
+id (username), karma, and an array of id's that correspond to all the 
+submissions they have made
+
+5. a callback function should store each author object into the database
+  - create an AuthorModel
+
+6. make a route in server.js called 'update-authors' that will call the 
+authorHelper function
+
+7. make a fetchAuthors Helper in ajaxHelpers that will ping the DB for author
+  info
+
+8. make author text be an <a> tag that changes to route /author/:id
+  - make a router in index.js and make it replace current 'ReactDOM.render...'
+
+9. make an author component that shows a given author's summary
+
+10. add the author component to the router
+
+
