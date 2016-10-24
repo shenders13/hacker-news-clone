@@ -21,11 +21,19 @@ authorHelper function
 7. make a fetchAuthors Helper in ajaxHelpers that will ping the DB for author
   info
 
-8. make author text be an <a> tag that changes to route /author/:id
+8. make author text be an <Link> tag that changes to route /author/:id
+  - npm install 'react-router' and require it in the needed module
   - make a router in index.js and make it replace current 'ReactDOM.render...'
+  - make author text have /author/karma/#submissions be in the <Link> tag
 
-9. make an author component that shows a given author's summary
+9. make an author component that shows a given author's summary from params
 
-10. add the author component to the router
+10. add the author component to the router (using params)
+
+11. put App component in its own file and import it
+
+12. put the hero image in App, change the router so that App is the parent route, and put {this.props.children} under the image tag in the App component
+
+13. we could then put the stories component as the index route
 
 
