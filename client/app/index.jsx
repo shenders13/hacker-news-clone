@@ -2,29 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import StoryList from './storyList.jsx';
 import $ from 'jquery';
-import fetchStories from './ajaxHelpers.js'
+import ajaxHelpers from './ajaxHelpers.js';
+import App from './App.jsx';
+import Author from './authorInfo.jsx'
+import { Route, Router, hashHistory, IndexRoute} from 'react-router';
 
-class App extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      storyList: props.stories
-    };
-  }
-
-  render () {
-    return (
-      <div>
-        <img className='bg-image' src='http://res.cloudinary.com/small-change/image/upload/v1477211672/hrbg_1_akcnyf.png'/>
-        <StoryList storyList={this.state.storyList}/>
-      </div>
-    )
-  }
-};
-
-fetchStories(function(topTenList) {
-  ReactDOM.render(<App stories={topTenList}/>, document.getElementById('app'));
+ajaxHelpers.fetchStories(function(topTenList) {
+  ajaxHelpers.fetchAuthors(function(authors) {
+    ReactDOM.render(
+      <Router history={hashHistory}>
+        <Route path='/' component={App} stories={topTenList} authors={authors}/>
+        <Route path='/author/:userName/:karma/:numSubmissions' component={Author}/>
+      </Router>
+      , document.getElementById('app')
+    );
+  });
 });
 
 
+// ReactDOM.render(<App stories={topTenList}/>, document.getElementById('app'));

@@ -11,6 +11,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use(bodyParser.json())
 
 app.get('/stories', storyHelpers.fetchStories);
+app.get('/authors', authorHelpers.fetchAuthors);
 app.post('/story', storyHelpers.insertStory);
 app.get('/update-stories', storyHelpers.updateStories);
 app.get('/update-authors', authorHelpers.updateAuthors);

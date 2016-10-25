@@ -2,7 +2,7 @@ import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var getAllStories = function(callback) {
+var fetchStories = function(callback) {
   $.ajax({
     url: '/stories',
     type: 'GET',
@@ -15,4 +15,22 @@ var getAllStories = function(callback) {
   }); 
 };
 
-export default getAllStories;
+var fetchAuthors = function(callback) {
+  $.ajax({
+    url: '/authors',
+    type: 'GET',
+    success: function(authors) {
+      callback(authors);
+    },
+    error: function(err) {
+      console.error(err);
+    }
+  }); 
+};
+
+var ajaxHelpers = {
+                    fetchStories: fetchStories,
+                    fetchAuthors: fetchAuthors
+                  }
+
+export default ajaxHelpers;

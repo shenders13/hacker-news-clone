@@ -5,24 +5,18 @@ var request = require('request');
 var mongoose = require('mongoose');
 
 
-// write fetchAuthor method to get 1 author from DB
-
-
-
-
-
-
 //-----------------------------------------------
 //---------GET AUTHORS FROM DATABASE-------------
 //-----------------------------------------------
 
 // fetchAuthors retrieves all authors from the authors table (NOT THE API).
 
-var fetchAuthors = function(callback) {
+exports.fetchAuthors = function(req, res) {
   Author.find({}, function(err, authors) {
-    callback(authors);
+    res.send(authors);
   })
 };
+
 
 //-----------------------------------------------
 //---------INSERT AUTHOR IN DATABASE-------------
