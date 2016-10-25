@@ -8,10 +8,9 @@ var StoryPanel = function(props) {
   for (var i = 0; i < authorList.length; i++) {
     if (authorList[i].username === thisAuthor) {
       var authorObject = authorList[i];
-      console.log('authorObject in loop: ', authorObject)
     }
   }
-  console.log('authorObject AFTER loop: ', authorObject)
+  
   var karma = authorObject.karma;
   var numSubmissions = authorObject.numSubmissions;
   var authorLink = '/author/' + thisAuthor + '/' + karma.toString() + '/' + numSubmissions.toString();
