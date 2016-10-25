@@ -1,7 +1,7 @@
 var request = require('request');
 
 var updateStories = function(callback) {
-  request.get('http://localhost:3000/update-authors', function(err, response, body) {
+  request.get('https://hackernewswithmodernui.herokuapp.com/update-stories', function(err, response, body) {
     if (err) {
       console.log('update stories error: ', err);
     } else {
@@ -12,7 +12,7 @@ var updateStories = function(callback) {
 
 
 var updateAuthors = function() {
-  request.get('http://localhost:3000/update-authors', function(err, response, body) {
+  request.get('https://hackernewswithmodernui.herokuapp.com/update-authors', function(err, response, body) {
     if (err) {
       console.log('update Authors error: ', err);
     } else {
