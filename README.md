@@ -11,6 +11,8 @@ I've written a step by step guide below.
 
 NB: The guide is heavily focused on the back-end
 
+<img src='http://res.cloudinary.com/small-change/image/upload/v1477383404/Screen_Shot_2016-10-25_at_1.15.49_am_iwhnpj.png'/>
+
 ## Stack
 
 It is built using the MERN (MongoDB, Express JS, React JS, Node JS) stack.
