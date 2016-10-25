@@ -105,7 +105,7 @@ exports.updateStories = function(req, res) {
     });
   };
 
-  // PART 3 - INVOKE FUNCTION. HANDLER INSERTS 20 STORY OBJECTS INTO DB.
+  // PART 3 - INVOKE FUNCTION. HANDLER INSERTS 10 STORY OBJECTS INTO DB.
 
   getStoriesData(10, function(storyInfo) {
     var filtered = {};
