@@ -1,9 +1,9 @@
+TODO
 
+1. add url shortner
+2. push to heroku
+3. format author page
+4. repeatedly call refresh of db
 
-12. put the hero image in App, change the router so that App is the parent route, and put {this.props.children} under the image tag in the App component
-
-13. we could then put the stories component as the index route
-
-14. add url shortner and show on story item
 
 

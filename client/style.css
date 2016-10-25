@@ -5,15 +5,30 @@
 .story-title {
   font-size:30px;
   font-weight: 200;
+  margin-top: 26px;
 }
 
 .story-panel {
   padding: 30px 0px 30px 20px;  
-  border-bottom:solid 1px #f1f1f1;
+  border-bottom: solid 1px #d9d8d8;
+  min-height: 300px;
 }
 
 .author-score {
-  margin:20px 0px 10px 0px;
+  margin:40px 0px 32px 0px;
+}
+
+.url-line {
+  margin:0px 0px 17px 0px;
+  display:inline;
+}
+
+.score-line {
+  display:inline;
+}
+
+.url-links {
+  font-weight: 200;
 }
 
 .url-links:hover {
@@ -21,4 +36,24 @@
   cursor: pointer;
 }
 
+.userIcon {
+  width: 27px;
+  height: 25px;
+  margin-right: 14px;
+}
 
+.scoreIcon {
+  width: 22px;
+  height: 22px;
+  margin-right: 17px;
+}
+
+span.author-link a:hover {
+  text-decoration: none;
+}
+
+span.author-link a {
+}
+
+
+    
