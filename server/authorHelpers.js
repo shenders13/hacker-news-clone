@@ -3,15 +3,6 @@ var Story = require('../db/storyModel.js');
 var bodyParser = require('body-parser');
 var request = require('request');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/authors');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('mongoose db AUTHORS is open!');
-});
-
-
-
 
 
 // write fetchAuthor method to get 1 author from DB
@@ -67,8 +58,6 @@ exports.updateAuthors = function(req, res) {
         console.error(err);
       } else {
         var authorInfo = JSON.parse(body);
-        console.log('user info: ', authorInfo);
-
         callback(authorInfo);
       }
     })
@@ -76,16 +65,20 @@ exports.updateAuthors = function(req, res) {
 
 
   var saveCurrentAuthorsData = function(callback) {
-    // get stories from database
-    Story.find({}, function(err, stories) {
-      // for each author in stories table
-      for (var i = 0; i < stories.length; i++) {
-        // get author's full details from HN API
-        getSingleAuthorFromAPI(stories[i].author, function(authorData) {
-          // run callback on authorData object
-          callback(authorData);
-        })
-      }
+    // remove current authors from DB
+    Author.remove({}, function() {
+      console.log('All author documents removed');
+      // get all current stories
+      Story.find({}, function(err, stories) {
+        // for each author in stories table
+        for (var i = 0; i < stories.length; i++) {
+          // get author's full details from HN API
+          getSingleAuthorFromAPI(stories[i].author, function(authorData) {
+            // run callback on authorData object
+            callback(authorData);
+          })
+        }
+      })
     })
     res.sendStatus(200);
   };
@@ -93,11 +86,15 @@ exports.updateAuthors = function(req, res) {
 
   saveCurrentAuthorsData(function(authorData) {
     var filtered = {};
-    filtered.author = authorData.by;
-    filtered.title = authorData.karma;
-    filtered.submittedCount = authorData.submitted.length;
+    filtered.username = authorData.id;
+    filtered.karma = authorData.karma;
+    filtered.numSubmissions = authorData.submitted.length;
     Author.create(filtered, function(err, data) {
-      console.log('filtered author document being saved to Author Table: ', data);
+      if (err) {
+        console.log('returned error in Author create: ', err);
+      } else {
+        console.log('Success inside Author create: ', data)
+      }
     })
   });
 

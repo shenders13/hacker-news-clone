@@ -1,11 +1,43 @@
 ToDo List
 
 
-3. make a getAuthorData method in authorHelpers.js
 
-4. authorHelpers.js should ping the Hacker News API and retrieve their
-id (username), karma, and an array of id's that correspond to all the 
-submissions they have made
+- PROBLEM: Author objects not saving to author schema
+- SYMPTOM: [Error: Trying to open unclosed connection.] state: 2
+
+
+// NEW APPROACH
+
+- open connection before you query/insert
+- close connection when you are done
+try this approach two ways:
+1: close connection after definining schema
+2: leave connection open after defining schema
+
+
+
+TECH ASSESSMENT INSIGHTS
+
+- make a mongoose connection when server starts (server.js) mongoose.connect('mongodb://localhost/hackednews');
+- no db.on(...) in schema
+
+
+STACKOVERFLOW INSIGHTS
+- 
+
+
+MY INSIGHTS
+-
+
+
+
+
+
+
+
+
+
+
 
 5. a callback function should store each author object into the database
   - create an AuthorModel

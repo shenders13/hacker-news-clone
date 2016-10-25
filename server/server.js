@@ -1,8 +1,8 @@
-var Story = require('../db/storyModel.js');
 var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
 var app = express();
+var db = require('../db/mongooseConnection.js');
 var storyHelpers = require('./storyHelpers.js');
 var authorHelpers = require('./authorHelpers.js');
 
