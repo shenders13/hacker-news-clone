@@ -1,0 +1,1 @@
+web: node server/server.js -p process.env.PORT

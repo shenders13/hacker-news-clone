@@ -17,7 +17,7 @@ app.get('/update-stories', storyHelpers.updateStories);
 app.get('/update-authors', authorHelpers.updateAuthors);
 
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(process.env.PORT || 3000, function () {
+  console.log('process.env.PORT: ', process.env.PORT);
 });
 
