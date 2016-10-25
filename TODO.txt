@@ -1,6 +1,6 @@
 TODO
 
-1. add url shortner
+1. add url shortner (done)
 2. push to heroku
 3. format author page
 4. repeatedly call refresh of db

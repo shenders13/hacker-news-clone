@@ -3,15 +3,16 @@
 }
 
 .story-title {
-  font-size:30px;
+  font-size:20px;
   font-weight: 200;
   margin-top: 26px;
+  color: #005197;
 }
 
 .story-panel {
   padding: 30px 0px 30px 20px;  
   border-bottom: solid 1px #d9d8d8;
-  min-height: 300px;
+  min-height: 287px;
 }
 
 .author-score {
