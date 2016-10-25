@@ -61,7 +61,6 @@ exports.updateAuthors = function(req, res) {
   var saveCurrentAuthorsData = function(callback) {
     // remove current authors from DB
     Author.remove({}, function() {
-      console.log('All author documents removed');
       // get all current stories
       Story.find({}, function(err, stories) {
         // for each author in stories table
@@ -84,11 +83,6 @@ exports.updateAuthors = function(req, res) {
     filtered.karma = authorData.karma;
     filtered.numSubmissions = authorData.submitted.length;
     Author.create(filtered, function(err, data) {
-      if (err) {
-        console.log('returned error in Author create: ', err);
-      } else {
-        console.log('Success inside Author create: ', data)
-      }
     })
   });
 

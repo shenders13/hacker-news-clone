@@ -5,7 +5,8 @@ var app = express();
 var db = require('../db/mongooseConnection.js');
 var storyHelpers = require('./storyHelpers.js');
 var authorHelpers = require('./authorHelpers.js');
-
+var updateStoriesAndAuthors = require('./updateData.js');
+updateStoriesAndAuthors();
 
 app.use(express.static(path.join(__dirname, '../client')));
 app.use(bodyParser.json())

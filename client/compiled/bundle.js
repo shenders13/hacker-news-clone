@@ -32494,41 +32494,60 @@
 	var authorInfo = function authorInfo(props) {
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    { className: 'author-panel' },
 	    _react2.default.createElement(
-	      'h1',
-	      null,
-	      ' author info '
+	      'div',
+	      { className: 'col-xs-4' },
+	      _react2.default.createElement(
+	        'center',
+	        null,
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'submissions-text' },
+	          props.params.userName
+	        ),
+	        _react2.default.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', className: 'author-panel-user-icon' })
+	      )
 	    ),
 	    _react2.default.createElement(
-	      'p',
-	      null,
+	      'div',
+	      { className: 'col-xs-4' },
 	      _react2.default.createElement(
-	        'b',
+	        'center',
 	        null,
-	        'username:'
-	      ),
-	      props.params.userName
+	        _react2.default.createElement('img', { src: 'http://image.flaticon.com/icons/svg/32/32214.svg', className: 'author-panel-karma-icon' }),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'author-panel-stat' },
+	          props.params.karma
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'karma-text' },
+	          'karma'
+	        )
+	      )
 	    ),
 	    _react2.default.createElement(
-	      'p',
-	      null,
+	      'div',
+	      { className: 'col-xs-4' },
 	      _react2.default.createElement(
-	        'b',
+	        'center',
 	        null,
-	        'karma:'
-	      ),
-	      props.params.karma
-	    ),
-	    _react2.default.createElement(
-	      'p',
-	      null,
-	      _react2.default.createElement(
-	        'b',
-	        null,
-	        'number of submissions:'
-	      ),
-	      props.params.numSubmissions
+	        _react2.default.createElement('img', { src: 'https://cdn0.iconfinder.com/data/icons/seo-and-internet-marketing-set-1/100/Directory_Submission-512.png', className: 'author-panel-submissions-icon' }),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'author-panel-stat' },
+	          props.params.numSubmissions
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'karma-text' },
+	          'submissions'
+	        )
+	      )
 	    )
 	  );
 	};
@@ -38395,6 +38414,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 178);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38419,6 +38440,34 @@
 	        'div',
 	        null,
 	        _react2.default.createElement('img', { className: 'bg-image', src: 'http://res.cloudinary.com/small-change/image/upload/v1477211672/hrbg_1_akcnyf.png' }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-xs-12' },
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'btn btn-default btn-sm nav-button-far-left' },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Home'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'btn btn-default btn-sm nav-buttons', href: 'http://samhenderson.xyz/' },
+	            ' About Maker'
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'btn btn-default btn-sm nav-buttons', href: 'https://github.com/shenders13/hacker-news-clone' },
+	            'This Repo'
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'btn btn-default btn-sm nav-buttons', href: 'https://news.ycombinator.com/' },
+	            'The Real Hacker News'
+	          )
+	        ),
 	        this.props.children
 	      );
 	    }

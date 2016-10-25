@@ -4,11 +4,13 @@ TODO
 
 2. push to heroku (done)
 
-3. repeatedly call refresh of db
+3. repeatedly call refresh of db (done)
 
-4. format author page
+4. format author page (done)
 
-5. redirect to my page and to hackerNews
+5. redirect to my xyz page, the github repo,  hackerNews
+
+6. write README
 
 
 

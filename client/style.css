@@ -56,5 +56,57 @@ span.author-link a:hover {
 span.author-link a {
 }
 
+.author-panel {
+  width: 100%;
+  min-height: 270px;
+  padding-top:20px;
+  background-color: #F1F1F1;
+}
 
-    
+.author-panel-user-icon {
+  width:110px;
+  height:110px;
+  text-align: center;
+}
+
+.author-panel-karma-icon {
+  width:100px;
+  height:100px;
+  text-align: center;  
+}
+
+.author-panel-submissions-icon {
+  width:100px;
+  height:100px;
+  text-align: center; 
+}
+
+.karma-text {
+  text-align: center;
+  font-size:25px;
+}
+
+.submissions-text {
+  text-align: center;
+  font-size:30px;
+}
+
+.author-panel-stat {
+  font-size: 36px;
+  margin-top: 20px;
+  text-align: center;  
+}
+
+.nav-buttons {
+  margin-left:10px;
+  margin-top:10px;
+}
+
+.nav-button-far-left {
+  margin-top:10px;
+  margin-left: -10px;
+}
+
+a:hover {
+  text-decoration: none;
+}
