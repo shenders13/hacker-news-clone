@@ -2,24 +2,13 @@ TODO
 
 1. add url shortner (done)
 
-2. push to heroku
-  - make a procfile
-  - added the following to server.js:
+2. push to heroku (done)
 
-    app.listen(process.env.PORT || 8080, function () {
-      console.log('process.env.PORT: ', process.env.PORT);
-    });
-  - in db/mongooseConncection.js:
+3. repeatedly call refresh of db
 
-    if (process.env.MONGODB_URI) {
-      mongoose.connect(process.env.MONGODB_URI);
-    } else {
-      mongoose.connect('mongodb://localhost/photoApp');
-    }
+4. format author page
 
-
-3. format author page
-4. repeatedly call refresh of db
+5. redirect to my page and to hackerNews
 
 
 
