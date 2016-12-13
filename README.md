@@ -2,8 +2,6 @@
 
 This repo guide should give you some familiarity with how the Hacker News API works.
 
-Here is a [live version](https://hackernewswithmodernui.herokuapp.com/#/stories?_k=9eq2f8) of this repo. 
-
 To build the app you see above, we save the top 10 stories on Hacker News into our database. We then save
 information about each of the authors into the database. Finally, we make the database refresh every 10 minutes.
 
